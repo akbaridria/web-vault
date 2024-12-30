@@ -12,7 +12,13 @@ const Navigation = () => {
 					<Typography variant="p3">X-Archive</Typography>
 				</div>
 				<div className="flex items-center gap-1">
-					<Button size="icon" variant="ghost" disabled>
+					<Button
+						size="icon"
+						variant="ghost"
+						onClick={() =>
+							window.open("https://github.com/akbaridria/web-vault", "_blank")
+						}
+					>
 						<GithubIcon size={12} />
 					</Button>
 					<FormAddArchive />
