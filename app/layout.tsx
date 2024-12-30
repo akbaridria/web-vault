@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ConnectProvider } from "@/components/connect-provider";
+import { ReactQueryProvider } from "@/components/react-query-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-	title: "Web Vault",
+	title: "X Archive",
 	description: "",
 };
 
@@ -32,7 +32,7 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<ConnectProvider>
+				<ReactQueryProvider>
 					<ThemeProvider
 						attribute="class"
 						defaultTheme="dark"
@@ -40,9 +40,9 @@ export default function RootLayout({
 						disableTransitionOnChange
 					>
 						{children}
-						<Toaster />
+						<Toaster position="top-center" />
 					</ThemeProvider>
-				</ConnectProvider>
+				</ReactQueryProvider>
 			</body>
 		</html>
 	);
